@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
-import styled, { ThemeProvider, css } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './styles/GlobalStyles';
 import Dashboard from './components/Dashboard';
 import Leads from './components/Leads';
@@ -13,7 +13,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 
 // Sample avatar image (replace with actual path or URL)
-import userAvatar from './assets/images/avatar.jpg';
+import userAvatar from '../assets/images/user-avatar.png';
 
 const AppContainer = styled.div`
   display: flex;
@@ -127,7 +127,9 @@ function App() {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
   };
 
   return (
@@ -159,7 +161,7 @@ function App() {
                     </ThemeToggleButton>
                   </Sidebar>
                   <div style={{ flex: 1 }}>
-                    <Header>TeleCRM </Header>
+                    <Header>TeleCRM Clone</Header>
                     <MainContent>
                       <Routes>
                         <Route path="/" element={<Dashboard />} />
@@ -177,7 +179,7 @@ function App() {
                 <Navigate to="/login" replace />
               )
             }
-        />
+          />
         </Routes>
       </Router>
     </ThemeProvider>

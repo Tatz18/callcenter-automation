@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif; /* Modern, sans-serif font like the Dribbble shot */
+    font-family: 'Inter', nunito; /* Modern, nunito font like the Dribbble shot */
     background: #F8F9FC; /* Light background from Dribbble */
     color: #333;
   }
@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 600;
   }
   button, select {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', nunito;
     border-radius: 12px; /* Rounded corners from Dribbble */
   }
   .container {

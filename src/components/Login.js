@@ -10,7 +10,7 @@ const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #F8F9FC;
+  background: ${props => props.theme.mainBackground};
 `;
 
 const FormWrapper = styled.div`
@@ -23,7 +23,7 @@ const FormWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  color: #333;
+  color: ${props => props.theme.textColor};
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 600;
@@ -33,10 +33,10 @@ const Input = styled.input`
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border: 1px solid #E0E0E0;
+  border: 1px solid ${props => props.theme.borderColor};
   border-radius: 12px;
   background: #FFFFFF;
-  color: #333;
+  color: ${props => props.theme.textColor};
   font-size: 14px;
   outline: none;
   &:focus {
@@ -63,7 +63,7 @@ const GradientButton = styled.button`
 
 const LinkText = styled.p`
   margin-top: 15px;
-  color: #666;
+  color: ${props => props.theme.textColor === '#333' ? '#666' : '#B0B0D1'};
   font-size: 14px;
   a {
     color: #00D4FF;
@@ -78,6 +78,7 @@ const UserInfo = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  color: ${props => props.theme.textColor};
 `;
 
 const Avatar = styled.img`
@@ -94,12 +95,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Simulate login (replace with actual API call)
     if (email && password) {
-      localStorage.setItem('isAuthenticated', 'true');
-      alert('Login successful! Redirecting to dashboard...');
-      navigate('/'); // Redirect to dashboard
-    } else {
-      alert('Please enter email and password.');
+      localStorage.setItem('isAuthenticated', 'true'); // Simple local storage for demo
+      navigate('/'); // Redirect to dashboard silently
     }
   };
 

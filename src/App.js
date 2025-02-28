@@ -13,7 +13,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 
 // Sample avatar image (replace with actual path or URL)
-import userAvatar from '../assets/images/user-avatar.png';
+import userAvatar from './assets/images/avatar.jpg';
 
 const AppContainer = styled.div`
   display: flex;

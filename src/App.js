@@ -147,7 +147,7 @@ function App() {
                   <Sidebar>
                     <UserInfo>
                       <Avatar src={userAvatar} alt="User Avatar" />
-                      <span>John Doe</span>
+                      <span>John De</span>
                     </UserInfo>
                     <GradientNavLink to="/">Dashboard</GradientNavLink>
                     <GradientNavLink to="/leads">Leads</GradientNavLink>
